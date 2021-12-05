@@ -7,7 +7,7 @@ $ErrorActionPreference = "Stop"
 [System.Uri]$uri = "https://adventofcode.com/$($year)/day/$($day)/input"
 
 $Cookie = New-Object System.Net.Cookie
-$Cookie.Name = "session" # Add the name of the cookie
+$Cookie.Name = "session"
 $Cookie.Value = $(Get-Content cookie.txt)
 $Cookie.Domain = $uri.DnsSafeHost
 
@@ -55,11 +55,11 @@ public class Day$( $day )Solver {
   }
 
   public int solvePart1(String input) {
-    return 0;
+    throw new RuntimeException(`"Not implemented`");
   }
 
   public int solvePart2(String input) {
-    return 0;
+    throw new RuntimeException(`"Not implemented`");
   }
 
 }" > "Day$( $day )Solver.java"
@@ -108,3 +108,5 @@ class Day$( $day )SolverTest {
 Pop-Location
 
 Set-Location "$($AOC_LOC)"
+
+Start-Process "https://adventofcode.com/$($year)/day/$($day)"
