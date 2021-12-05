@@ -4,11 +4,11 @@ param(
 )
 $ErrorActionPreference = "Stop"
 
-[System.Uri]$uri = "https://adventofcode.com/$($year)/day/$($day)/input"
+[System.Uri]$uri = "https://adventofcode.com/$( $year )/day/$( $day )/input"
 
 $Cookie = New-Object System.Net.Cookie
 $Cookie.Name = "session"
-$Cookie.Value = $(Get-Content cookie.txt)
+$Cookie.Value = $( Get-Content cookie.txt )
 $Cookie.Domain = $uri.DnsSafeHost
 
 $WebSession = New-Object Microsoft.PowerShell.Commands.WebRequestSession
@@ -21,28 +21,28 @@ $props = @{
     WebSession = $WebSession
 }
 
-$input = $(Invoke-RestMethod @props)
+$input = $( Invoke-RestMethod @props )
 $input = $input.Replace("`n", "\n`"`n+`"")
-$input = $input.SubString(0,$input.Length-6)
-$input = "`"$($input)`";"
+$input = $input.SubString(0, $input.Length - 6)
+$input = "`"$( $input )`";"
 
-Set-Location "$($AOC_LOC)\src\main\java\com\scgrk\y$($year)"
+Set-Location "$( $AOC_LOC )\src\main\java\com\scgrk\y$( $year )"
 mkdir "day$day"
 Set-Location "day$day"
 New-Item "Day$( $day )Input.java"
 
-Write-Output "package com.scgrk.day$day;
+Write-Output "package com.scgrk.y$( $year ).day$day;
 
 public class Day$( $day )Input {
 
   public static final String TEST_INPUT = `"`";
 
-  public static final String REAL_INPUT = $($input)
+  public static final String REAL_INPUT = $( $input )
 
 }" > "Day$( $day )Input.java"
 
 New-Item "Day$( $day )Solver.java"
-Write-Output "package com.scgrk.day$day;
+Write-Output "package com.scgrk.y$( $year ).day$( $day );
 
 public class Day$( $day )Solver {
 
@@ -66,11 +66,11 @@ public class Day$( $day )Solver {
 
 Set-Location ..
 
-Push-Location "$($AOC_LOC)\src\test\java\com\scgrk\y$($year)"
+Push-Location "$( $AOC_LOC )\src\test\java\com\scgrk\y$( $year )"
 mkdir "day$day"
 Set-Location "day$day"
 New-Item "Day$( $day )SolverTest.java"
-Write-Output "package com.scgrk.day$( $day );
+Write-Output "package com.scgrk.y$( $year ).day$( $day );
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -107,6 +107,6 @@ class Day$( $day )SolverTest {
 
 Pop-Location
 
-Set-Location "$($AOC_LOC)"
+Set-Location "$( $AOC_LOC )"
 
-Start-Process "https://adventofcode.com/$($year)/day/$($day)"
+Start-Process "https://adventofcode.com/$( $year )/day/$( $day )"

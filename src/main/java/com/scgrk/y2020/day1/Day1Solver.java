@@ -1,4 +1,4 @@
-package com.scgrk.day1;
+package com.scgrk.y2020.day1;
 
 public class Day1Solver {
 
@@ -11,11 +11,11 @@ public class Day1Solver {
   }
 
   public int solvePart1(String input) {
-    return 0;
+    throw new RuntimeException("Not implemented");
   }
 
   public int solvePart2(String input) {
-    return 0;
+    throw new RuntimeException("Not implemented");
   }
 
 }

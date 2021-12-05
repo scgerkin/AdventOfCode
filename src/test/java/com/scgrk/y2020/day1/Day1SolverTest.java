@@ -1,4 +1,4 @@
-package com.scgrk.day1;
+package com.scgrk.y2020.day1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
