@@ -84,7 +84,6 @@ class Day$( $day )SolverTest {
     assertEquals(0, solver.solve(Day$( $day )Input.TEST_INPUT, 1));
   }
 
-  @Disabled
   @Test
   void test_solve_part1_realInput() {
     Day$( $day )Solver solver = new Day$( $day )Solver();
@@ -97,7 +96,6 @@ class Day$( $day )SolverTest {
     assertEquals(0, solver.solve(Day$( $day )Input.TEST_INPUT, 2));
   }
 
-  @Disabled
   @Test
   void test_solve_part2_realInput() {
     Day$( $day )Solver solver = new Day$( $day )Solver();

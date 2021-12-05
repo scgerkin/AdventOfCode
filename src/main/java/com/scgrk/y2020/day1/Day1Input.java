@@ -2,7 +2,12 @@ package com.scgrk.y2020.day1;
 
 public class Day1Input {
 
-  public static final String TEST_INPUT = "";
+  public static final String TEST_INPUT = "1721\n"
+      + "979\n"
+      + "366\n"
+      + "299\n"
+      + "675\n"
+      + "1456";
 
   public static final String REAL_INPUT = "1834\n"
 +"1546\n"
